@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #198a5f, #373b42);
+}
+
+.registro-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    width: 320px; /* Ajuste el ancho del formulario */
+    padding: 30px; /* Ajuste el espacio interior del formulario */
+    text-align: center;
+}
+
+.registro-container h1 {
+    color: #333;
+    margin-bottom: 15px; /* Ajuste el margen inferior del título */
+}
+
+.registro-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0; /* Ajuste el margen superior e inferior de los campos de entrada */
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    transition: border-bottom-color 0.3s;
+}
+
+.registro-form input:focus {
+    border-bottom-color: #00913f;
+}
+
+.registro-form button {
+    background-color: #00913f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px; /* Ajuste el espaciado del botón */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registro-form button:hover {
+    background-color: #007d37;
+}
+
+.registro-form p {
+    margin-top: 10px; /* Ajuste el margen superior del párrafo */
+    color: #888;
+}
+
+.registro-form a {
+    color: #00913f;
+    text-decoration: none;
+}
