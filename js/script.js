@@ -57,7 +57,6 @@ const validarCampos = () => {
 }
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll('a[href^="#"]');
     for (const link of links) {
