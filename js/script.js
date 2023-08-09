@@ -1,3 +1,63 @@
+
+const validarCampos = () => {
+    let nombre = document.getElementById('usuario').value;
+    let pass = document.getElementById('password').value;
+
+
+    if (nombre.trim() === '') {
+        Swal.fire({
+            title: 'El campo usuario es obligatorio.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
+    if (nombre.trim().length < 4) {
+        Swal.fire({
+            title: 'El usuario debe ser mayor a 3 caracteres.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
+    if (pass.trim() === '') {
+        Swal.fire({
+            title: 'El campo de contraseña es obligatorio.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
+    
+    if (pass.trim().length < 5) {
+        Swal.fire({
+            title: 'La contraseña debe ser mayor a 5 caracteres.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
+    return true
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll('a[href^="#"]');
     for (const link of links) {
@@ -52,32 +112,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-// JavaScript
-document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.querySelector(".slider");
-    const prevButton = document.querySelector(".prev-button");
-    const nextButton = document.querySelector(".next-button");
 
-    let currentIndex = 0;
 
-    // Función para avanzar al siguiente slide
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slider.children.length;
-        updateSlider();
-    }
-
-    // Función para retroceder al slide anterior
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slider.children.length) % slider.children.length;
-        updateSlider();
-    }
-
-    // Función para actualizar la posición del slider
-    function updateSlider() {
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    // Agregar listeners a los botones de navegación
-    nextButton.addEventListener("click", nextSlide);
-    prevButton.addEventListener("click", prevSlide);
-});
