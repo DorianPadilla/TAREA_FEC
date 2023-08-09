@@ -35,6 +35,7 @@ body {
     gap: 20px;
     margin: 0;
     padding: 0;
+    padding-inline-end: 5px;
 }
 
 .navigation li {
@@ -79,10 +80,11 @@ body {
     /* Ajusta el alto al 100% de la ventana */
     overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     color: white;
     text-align: center;
+    float: left;
+    padding-top: 10rem;
 }
 
 #background-video {
@@ -98,14 +100,22 @@ body {
 }
 
 .content-overlay {
+    width: 50%;
+    height: 40%;
     position: relative;
     z-index: 1;
     /* Asegura que el contenido esté encima del video */
-    text-align: center;
+    text-align: justify;
     color: white;
+    float: left;
+
+}
+.content.buttons{
+    padding-inline: 10px;
 }
 
 .content h1 {
+    text-align: left;
     font-size: 40px;
     margin: 0;
     /* Elimina los márgenes superior e inferior */
@@ -113,6 +123,10 @@ body {
 
 .content h2 {
     font-size: 28px;
+}
+.content .buttons h3{
+    padding: 0.1rem ;
+    padding-inline: -2px;
 }
 
 .logo-name img {
@@ -348,12 +362,15 @@ input {
 button {
     background-color: #00913f;
     color: white;
-    padding: 10px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 3px;
+    padding: 0.1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+    border: 1px #333;
+    border-radius: 2px;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: 2px 2px 5px #0a0a0a;
 }
 
 button:hover {
