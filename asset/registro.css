@@ -26,7 +26,7 @@ body {
 .registro-form input {
     width: 100%;
     padding: 10px;
-    margin: 8px 0; /* Ajuste el margen superior e inferior de los campos de entrada */
+    margin: 8px 8px 8px -8px; /* Ajuste el margen superior e inferior de los campos de entrada */
     border: none;
     border-bottom: 2px solid #ccc;
     outline: none;

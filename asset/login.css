@@ -26,7 +26,7 @@ body {
 .login-form input {
     width: 100%;
     padding: 10px;
-    margin: 12px 0;
+    margin: 12px 12px 12px -10px;
     border: none;
     border-bottom: 2px solid #ccc;
     outline: none;
