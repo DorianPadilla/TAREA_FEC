@@ -1,10 +1,10 @@
 
 const validarCampos = () => {
-    let nombre = document.getElementById('usuario').value;
-    let pass = document.getElementById('password').value;
+    let correo = document.getElementById('correo').value;
+    let pass = document.getElementById('pass').value;
 
 
-    if (nombre.trim() === '') {
+    if (correo.trim() === '') {
         Swal.fire({
             title: 'El campo usuario es obligatorio.',
             icon: 'warning',
@@ -16,7 +16,7 @@ const validarCampos = () => {
         return false;
     }
 
-    if (nombre.trim().length < 4) {
+    if (correo.trim().length < 4) {
         Swal.fire({
             title: 'El usuario debe ser mayor a 3 caracteres.',
             icon: 'warning',
@@ -55,7 +55,6 @@ const validarCampos = () => {
 
     return true
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll('a[href^="#"]');

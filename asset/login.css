@@ -60,3 +60,11 @@ body {
     color: #00913f;
     text-decoration: none;
 }
+
+.error-message {
+    display: none;
+    color: red;
+    background-color: #00913f;
+    font-size: 14px;
+    margin-top: 5px;
+}

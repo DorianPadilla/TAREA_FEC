@@ -22,7 +22,7 @@
             <li><a href="#productos">Productos</a></li>
             <li><a href="#q-somos">Quiénes somos</a></li>
             <li><a href="#pie-pagina">Contáctanos</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="login.php">Login</a></li>
         </ul>
     </div>
 
@@ -49,7 +49,7 @@
         </div>    
     </div>
     
-    <div id="productos">
+    <div id="producto">
         <h1>NUESTROS FERTILIZANTES</h1>
         <p>Conozca nuestro portafolio de fertilizantes que cuentan con la calidad para nutrir los cultivos del país.</p>
     </div>
