@@ -1,11 +1,36 @@
 <?php
+
 require_once 'Conexion/conexion.php';
+
+session_start();
+
 
 $db = new conexion();
 $conn = $db->connect();
 
 $query = "SELECT * FROM inventario";
 $result = $conn->query($query);
+
+
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+
+if (!isset($_SESSION['last_activity'])) {
+    $_SESSION['last_activity'] = time();
+} else {
+    if (time() - $_SESSION['last_activity'] > 120) {
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
+        exit();
+    }
+
+    $_SESSION['last_activity'] = time();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -15,18 +40,26 @@ $result = $conn->query($query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="asset/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Tabla de Inventario</title>
 </head>
 
 <body>
+    <div id="cerrarSesion">
+        <a href="eliminarSesion.php">Cerrar Sesion</a>
+    </div>
+
     <h1>Tabla de Inventario</h1>
 
     <button id="addProductButton">Agregar Producto</button>
-    
+
+
+
+
     <div id="addProductForm" style="display: none;">
         <form action="agregarProducto.php" method="POST">
             <label for="codigo">Código:</label>
-            <input type="text" id="codigo" name="codigo" required autocomplete="off" >
+            <input type="text" id="codigo" name="codigo" required autocomplete="off">
 
             <label for="descripcion">Descripción:</label>
             <input type="text" id="descripcion" name="descripcion" required autocomplete="off">
@@ -87,6 +120,19 @@ $result = $conn->query($query);
             addProductForm.style.display = 'block';
             addProductButton.style.display = 'none';
         });
+
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Sesión cerrada por inactividad',
+                text: 'Tu sesión ha sido cerrada debido a inactividad.',
+                icon: 'warning',
+                customClass: {
+                    confirmButton: ''
+                }
+            }).then(function() {
+                window.location.href = 'login.php';
+            });
+        }, 120000);
     </script>
 </body>
 

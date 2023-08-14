@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="error.css">
+    <link rel="stylesheet" href="">
     <title>Error</title>
     <style>
         body {
@@ -39,6 +39,12 @@
             text-decoration: none;
         }
     </style>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = 'login.php';
+        }, 5000);
+    </script>
 </head>
 
 <body>

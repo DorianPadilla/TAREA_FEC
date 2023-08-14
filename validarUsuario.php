@@ -18,10 +18,18 @@ class Validar
             } else {
                 $user = new User;
 
-                if ($user->getUser($username, $password)) {
-                    session_start();
-                    $_SESSION['usuario'] = $username;
-                    header('Location: tabla.php');
+                if ($user->getUser($username)) {
+                    $storedPassword = $user->getStoredPassword($username);
+
+                    if (password_verify($password, $storedPassword)) {
+                        session_start();
+                        $_SESSION['usuario'] = $username;
+                        header('Location: tabla.php');
+                    } else {
+                        $errorMessage = "Contraseña incorrecta";
+                        header("Location: error.php?message=" . urlencode($errorMessage));
+                        exit();
+                    }
                 } else {
                     $errorMessage = "Usuario incorrecto";
                     header("Location: error.php?message=" . urlencode($errorMessage));
@@ -31,11 +39,11 @@ class Validar
         }
     }
 
-
     public function getUser()
     {
         return $this->validaUser();
     }
+
 }
 
 

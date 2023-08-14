@@ -491,3 +491,18 @@ tr:hover {
     background-color: #007d36;
 }
 
+
+#cerrarSesion a {
+    background-color: #ff1111;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    float: right;
+}
+
+#cerrarSesion a:hover {
+    background-color: #a90000;
+}

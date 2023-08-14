@@ -5,8 +5,8 @@ const validarCamposRegistro = () => {
     let direccion = document.getElementById('direccion').value;
     let fecha = document.getElementById('fecha-nacimiento').value;
     let telefono = document.getElementById('telefono').value;
-    let correo = document.getElementById('usuario').value;
-    let pass = document.getElementById('password').value;
+    let correo = document.getElementById('correo').value;
+    let pass = document.getElementById('pass').value;
 
 
 

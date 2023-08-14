@@ -10,7 +10,7 @@
 <body>
     <div class="registro-container">
         <h1>Registrarse</h1>
-        <form class="registro-form" method="get" action="" onsubmit="return validarCamposRegistro()">
+        <form class="registro-form" method="POST" action="validaRegistro.php" onsubmit="return validarCamposRegistro()">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" autocomplete="off">
 
@@ -27,10 +27,10 @@
             <input type="tel" id="telefono" name="telefono" autocomplete="off">
 
             <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="usuario" name="usuario" autocomplete="off">
+            <input type="email" id="correo" name="correo" autocomplete="off">
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" autocomplete="off">
+            <label for="pass">Contraseña:</label>
+            <input type="password" id="pass" name="pass" autocomplete="off">
 
             <button type="submit">Registrarse</button>
         </form>
