@@ -16,7 +16,7 @@
             <a href="#">
                 <img src="img/fertilizer-7465857_1280.png" alt="Logo de la empresa" class="logo">
             </a>
-            <h1 class="logo-name">Fertilizante</h1>
+            <h1 class="logo-name">Ecocultivos</h1>
         </div>
         <ul class="navigation">
             <li><a href="#productos">Productos</a></li>
