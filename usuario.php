@@ -5,7 +5,7 @@ class User extends conexion
 
     public function getUser($username)
     {
-        $sql = "SELECT * FROM login WHERE correo = '$username'";
+        $sql = "SELECT * FROM login WHERE BINARY nombre = '$username'";
 
         $result = $this->connect()->query($sql);
 
@@ -19,7 +19,7 @@ class User extends conexion
 
     public function getStoredPassword($username)
     {
-        $sql = "SELECT pass FROM login WHERE correo = '$username'";
+        $sql = "SELECT pass FROM login WHERE BINARY nombre = '$username'";
         $result = $this->connect()->query($sql);
 
         if ($result->num_rows == 1) {
@@ -30,3 +30,4 @@ class User extends conexion
         return false;
     }
 }
+

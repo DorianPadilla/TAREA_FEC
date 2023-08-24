@@ -1,3 +1,39 @@
+<?php
+
+require_once 'Conexion/conexion.php';
+
+session_start();
+
+
+$db = new conexion();
+$conn = $db->connect();
+
+$query = "SELECT * FROM inventario";
+$result = $conn->query($query);
+
+
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+
+if (!isset($_SESSION['last_activity'])) {
+    $_SESSION['last_activity'] = time();
+} else {
+    if (time() - $_SESSION['last_activity'] > 120) {
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
+        exit();
+    }
+
+    $_SESSION['last_activity'] = time();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -62,7 +98,7 @@
 
 
 
-                <button class="button">
+                <button class="button" onclick="location.href='eliminarSesion.php'">
                     <ion-icon name="log-out-outline"></ion-icon>
                     <span> <a href="#">Sing Out</a></span>
                 </button>
@@ -75,8 +111,11 @@
                 <ion-icon name="rose-outline"></ion-icon>
                 <span> <a href="#"></a></span>
             </button>
+            <div id=username>
+                <span>  </span>
+            </div>
             <div class="img">
-                <img src="img\3.jpg" alt="USER">
+               <?php echo $_SESSION['usuario']; ?>
             </div>
         </nav>
     </div>
@@ -87,6 +126,20 @@
     <script src=" js/dashboard.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Sesión cerrada por inactividad',
+                text: 'Tu sesión ha sido cerrada debido a inactividad.',
+                icon: 'warning',
+                customClass: {
+                    confirmButton: ''
+                }
+            }).then(function() {
+                window.location.href = 'login.php';
+            });
+        }, 120000);
+    </script>
 </body>
 
 </html>

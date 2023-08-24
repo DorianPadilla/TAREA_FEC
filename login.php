@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION['usuario'])) {
-    header('Location: tabla.php');
+    header('Location: dashboard.php');
     exit;
 }
 
@@ -25,7 +25,7 @@ if (isset($_SESSION['usuario'])) {
         <h1>Iniciar Sesión</h1>
         <form class="login-form" method="POST" action="validarUsuario.php" onsubmit="return validarCampos()">
             <label for="correo">Usuario:</label>
-            <input type="email" id="correo" name="correo" autocomplete="off">
+            <input type="text" id="nombre" name="nombre" autocomplete="off">
 
             <label for="pass">Contraseña:</label>
             <input type="password" id="pass" name="pass" autocomplete="off">

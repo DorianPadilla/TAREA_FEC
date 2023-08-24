@@ -9,7 +9,7 @@
         public function __construct(){
             $this->servername = 'localhost';
             $this->user = 'root';
-            $this->password = '';
+            $this->password = '1234';
             $this->dbname = 'fertilizante';
         }
 

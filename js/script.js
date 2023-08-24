@@ -1,10 +1,10 @@
 
 const validarCampos = () => {
-    let correo = document.getElementById('correo').value;
+    let nombre = document.getElementById('nombre').value;
     let pass = document.getElementById('pass').value;
 
 
-    if (correo.trim() === '') {
+    if (nombre.trim() === '') {
         Swal.fire({
             title: 'El campo usuario es obligatorio.',
             icon: 'warning',
@@ -16,7 +16,7 @@ const validarCampos = () => {
         return false;
     }
 
-    if (correo.trim().length < 4) {
+    if (nombre.trim().length < 4) {
         Swal.fire({
             title: 'El usuario debe ser mayor a 3 caracteres.',
             icon: 'warning',
@@ -50,6 +50,23 @@ const validarCampos = () => {
             showConfirmButton: false,
             timer: 1500
         });        
+        return false;
+    }
+
+    var hasLowerCase = /[a-z]/.test(pass);
+    var hasUpperCase = /[A-Z]/.test(pass);
+    var hasSpecialChar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(pass);
+    var hasNumber = /\d/.test(pass);
+
+    if (!hasLowerCase || !hasUpperCase || !hasSpecialChar || !hasNumber) {
+        Swal.fire({
+            title: 'La contraseña debe contener al menos una letra minúscula, una letra mayúscula, un carácter especial y un número.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });
         return false;
     }
 

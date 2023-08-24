@@ -20,8 +20,8 @@
             <label for="direccion">Dirección:</label>
             <input type="text" id="direccion" name="direccion" autocomplete="off">
 
-            <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" autocomplete="off">
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" autocomplete="off">
 
             <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" name="telefono" autocomplete="off">

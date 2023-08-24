@@ -43,8 +43,8 @@
                 <button class="boton">
                     <h3>Registrese</h3>
                 </button>
-                <button class="boton">
-                    <h3>Inicia Sesión </h3>
+                <button class="boton" onclick="location.href='login.php'"> 
+                    <h3>Inicia Sesión</h3>
                 </button>
             </div>
         </div>

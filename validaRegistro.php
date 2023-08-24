@@ -1,3 +1,15 @@
+<script>
+function badpass(){
+    Swal.fire({
+        title: 'La contraseña debe contener al menos una letra minúscula, una letra mayúscula, un carácter especial y un número.',
+        icon: 'warning',
+        position: 'center',
+        color: 'red',
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
+</script>
 <?php
 
 require_once "Conexion/conexion.php";
@@ -12,13 +24,23 @@ class Registro
             $db = new conexion();
             $conn = $db->connect();
 
-            $nombre = $_POST['nombre'];
-            $apellido = $_POST['apellido'];
-            $direccion = $_POST['direccion'];
+            $nombre = $_POST          ['nombre'];
+            $apellido = $_POST        ['apellido'];
+            $direccion = $_POST       ['direccion'];
             $fecha_nacimiento = $_POST['fecha_nacimiento'];
-            $telefono = $_POST['telefono'];
-            $correo = $_POST['correo'];
-            $rawPass = $_POST['pass'];
+            $telefono = $_POST        ['telefono'];
+            $correo = $_POST          ['correo'];
+            $rawPass = $_POST         ['pass'];
+
+            if (!preg_match("/[a-z]/", $rawPass) ||
+                !preg_match("/[A-Z]/", $rawPass) ||
+                !preg_match("/[!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?]+/", $rawPass) ||
+                !preg_match("/\d/", $rawPass)) {
+                $errorMessage = "La contraseña debe contener al menos una letra minúscula, una letra mayúscula, un carácter especial y un número.";
+                header("Location: registro.php?message=" . urlencode($errorMessage)); 
+                badpass();
+                exit();
+            }
 
             $pass = password_hash($rawPass, PASSWORD_DEFAULT);
 

@@ -9,7 +9,7 @@ class Validar
     private function validaUser()
     {
         if (isset($_POST['submit'])) {
-            $username = $_POST['correo'];
+            $username = $_POST['nombre'];
             $password = $_POST['pass'];
 
             if (empty($username) || empty($password)) {
@@ -24,7 +24,7 @@ class Validar
                     if (password_verify($password, $storedPassword)) {
                         session_start();
                         $_SESSION['usuario'] = $username;
-                        header('Location: tabla.php');
+                        header('Location: dashboard.php');
                     } else {
                         $errorMessage = "Contraseña incorrecta";
                         header("Location: error.php?message=" . urlencode($errorMessage));
