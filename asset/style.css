@@ -41,7 +41,7 @@ body {
 .logo-name {
     margin: 0;
     color: transparent;
-    background-image: linear-gradient(to right, #b8fdb8, #7df17d, #FFFFFF, #31f894);
+    background-image: linear-gradient(to right, #b8fdb8, #7df17d, #58e06b, #31f894);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
