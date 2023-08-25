@@ -44,7 +44,7 @@
                     <h3>Registrese</h3>
                 </button>
                 <button class="boton" onclick="location.href='login.php'"> 
-                    <h3>Inicia Sesión</h3>
+                    <h3>Administración</h3>
                 </button>
             </div>
         </div>

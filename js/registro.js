@@ -1,14 +1,33 @@
-console.log("Holaaaaaaaaaa")
+console.log("Holaaaaaaaaaa");
+
 const validarCamposRegistro = () => {
     let nombre = document.getElementById('nombre').value;
     let apellido = document.getElementById('apellido').value;
     let direccion = document.getElementById('direccion').value;
-    let fecha = document.getElementById('fecha-nacimiento').value;
+    let fecha = document.getElementById('fecha_nacimiento').value;
     let telefono = document.getElementById('telefono').value;
     let correo = document.getElementById('correo').value;
     let pass = document.getElementById('pass').value;
 
-
+    if (
+        nombre.trim() === '' ||
+        apellido.trim() === '' ||
+        direccion.trim() === '' ||
+        fecha.trim() === '' ||
+        telefono.trim() === '' ||
+        correo.trim() === '' ||
+        pass.trim() === ''
+    ) {
+        Swal.fire({
+            title: 'Todos los campos son obligatorios.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        return false;
+    }
 
     if (nombre.trim() === '') {
         Swal.fire({
@@ -170,5 +189,24 @@ const validarCamposRegistro = () => {
         });        
         return false;
     }
-    return true
+
+
+    if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?])/.test(pass)) {
+        Swal.fire({
+            title: 'La contraseña debe contener al menos una letra minúscula, una letra mayúscula, un carácter especial y un número.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
+    return true;
 }
+
+
+
+
+

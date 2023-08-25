@@ -19,3 +19,4 @@ card.addEventListener('visibilitychange', () => {
     console.log('El div ha aparecido');
   }
 });
+

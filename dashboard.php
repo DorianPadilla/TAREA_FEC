@@ -88,7 +88,7 @@ if (!isset($_SESSION['last_activity'])) {
                     <span> <a href="#">password</a></span>
                 </button>
 
-                <button class="button">
+                <button class="button" onclick="location.href='eliminarSesion.php'">
                     <ion-icon name="log-out-outline"></ion-icon>
                     <span id="cerrar-sesion"> <a href="#">Sing Out</a></span>
                 </button>
@@ -125,30 +125,29 @@ if (!isset($_SESSION['last_activity'])) {
         </nav>
 
     </div>
-
-
-
-    <script src=" js/dashboard.js">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        setTimeout(function() {
+        console.log("el setTime se ejecutó");
+          Swal.fire({
+              title: 'Sesión cerrada por inactividad',
+              text: 'Tu sesión ha sido cerrada debido a inactividad.',
+              icon: 'warning',
+              customClass: {
+                  confirmButton: ''
+              }
+          }).then(function() {
+              window.location.href = 'login.php';
+          });
+        }, 120000);
     </script>
+    <script src=" js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>
-        setTimeout(function() {
-            Swal.fire({
-                title: 'Sesión cerrada por inactividad',
-                text: 'Tu sesión ha sido cerrada debido a inactividad.',
-                icon: 'warning',
-                customClass: {
-                    confirmButton: ''
-                }
-            }).then(function() {
-                window.location.href = 'login.php';
-            });
-        }, 120000);
-    </script>
 </body>
 
 </html>
