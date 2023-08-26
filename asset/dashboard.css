@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
 :root{
-    --color-text: rgb(0,0,0);
+    --color-text: rgb(0, 0, 0);
     --color-text-menu: rgba(134,136,144);
     --color-button: rgb(0,0,0);
     --color-button-text: rgb(255,255,255);
@@ -269,7 +269,6 @@ a{
     display: flex;
     flex-direction: row;
     gap: 20px;
-
     align-items: center; 
     
 }
@@ -288,13 +287,32 @@ a{
 .contenido .cortes .corte h1{
     display: flex;
     text-align: center;
-    color: black;
+    color: rgb(243, 238, 238);
     border-radius: 10px;
     width: 290px;
+    height: 40px;
+    
+    
 
 }
 .corte p{
     width: 100%;
     background-color: rgba(212, 236, 214, 0.473) ;
     border-radius: 10px;
+}
+
+.contenido .corte p{
+    display: flex;
+    font-family: "verdana" "center";
+    text-align: center;
+    align-items:center ;
+    justify-content: center;
+    margin-top: 1.5rem;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #ffffff;
+   
+
+
 }
