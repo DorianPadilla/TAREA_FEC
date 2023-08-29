@@ -2,6 +2,7 @@
 
 require_once "Conexion/conexion.php";
 require_once "usuario.php";
+require_once "Metodos.php";
 
 class Registro
 {
@@ -43,7 +44,5 @@ class Registro
     }
 }
 
-$objValidate = new Registro();
-$objValidate->registrarUser();
 ?>
 
