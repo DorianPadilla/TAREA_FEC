@@ -43,6 +43,3 @@ class Registro
         return $this->registrarUsuarioBd();
     }
 }
-
-?>
-

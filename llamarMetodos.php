@@ -15,7 +15,7 @@ class Resultado {
     }
 
     public function mostrarResultado() {
-        $this->llamar("registrarUsssesr");
+        $this->llamar("registrarUser");
     }
 }
 
