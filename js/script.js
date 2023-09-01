@@ -41,9 +41,9 @@ const validarCampos = () => {
     }
 
     
-    if (pass.trim().length < 5) {
+    if (pass.trim().length < 6) {
         Swal.fire({
-            title: 'La contraseña debe ser mayor a 5 caracteres.',
+            title: 'La contraseña debe ser mayor a 6 caracteres.',
             icon: 'warning',
             position: 'center',
             color: 'red',
@@ -127,5 +127,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-

@@ -8,6 +8,7 @@ const validarCamposRegistro = () => {
     let telefono = document.getElementById('telefono').value;
     let correo = document.getElementById('correo').value;
     let pass = document.getElementById('pass').value;
+    
 
     if (
         nombre.trim() === '' ||
@@ -53,6 +54,18 @@ const validarCamposRegistro = () => {
         return false;
     }
 
+    if (!/^[A-Za-zÁ-Úá-úüÜ]+$/.test(nombre.trim())) {
+        Swal.fire({
+            title: 'El campo de nombre solo debe contener letras.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
     if (apellido.trim() === '') {
         Swal.fire({
             title: 'El campo de apellido es obligatorio.',
@@ -63,12 +76,23 @@ const validarCamposRegistro = () => {
             timer: 1500
         });        
         return false;
-    }
-
+    } 
     
     if (apellido.trim().length < 3) {
         Swal.fire({
             title: 'el apellido debe ser mayor a 3 caracteres.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
+    if (!/^[A-Za-zÁ-Úá-úüÜ]+$/.test(apellido.trim())) {
+        Swal.fire({
+            title: 'El campo de apellido solo debe contener letras.',
             icon: 'warning',
             position: 'center',
             color: 'red',
@@ -127,10 +151,33 @@ const validarCamposRegistro = () => {
         return false;
     }
 
-    
+    if (!/^\d+$/.test(telefono.trim())) {
+        Swal.fire({
+            title: 'El campo de telefono solo debe contener números.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
     if (telefono.trim().length < 10) {
         Swal.fire({
-            title: 'La telefono debe ser mayor a 10 digitos.',
+            title: 'El telefono debe ser igual a 10 digitos.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
+    if (telefono.trim().length > 10) {
+        Swal.fire({
+            title: 'El telefono no debe pasar de 10 caracteres numericos',
             icon: 'warning',
             position: 'center',
             color: 'red',
@@ -165,6 +212,18 @@ const validarCamposRegistro = () => {
         return false;
     }
 
+    if (!correo.trim().endsWith("@gmail.com")) {
+        Swal.fire({
+            title: 'Por favor, ingresa un correo electrónico de Gmail',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
     if (pass.trim() === '') {
         Swal.fire({
             title: 'El campo de contraseña es obligatorio.',
@@ -177,10 +236,25 @@ const validarCamposRegistro = () => {
         return false;
     }
 
-    
-    if (pass.trim().length < 5) {
+    if (pass.trim().length < 6) {
         Swal.fire({
-            title: 'La contraseña debe ser mayor a 5 caracteres.',
+            title: 'La contraseña debe ser mayor a 6 caracteres.',
+            icon: 'warning',
+            position: 'center',
+            color: 'red',
+            showConfirmButton: false,
+            timer: 1500
+        });        
+        return false;
+    }
+
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(pass.trim()) ||
+    !/[A-Z]/.test(pass.trim()) ||
+    !/[a-z]/.test(pass.trim()) ||
+    !/[0-9]/.test(pass.trim())
+    ){
+        Swal.fire({
+            title: 'La contraseña debe contener 1 caracter especial, 1 letra mayuscula, 1 letra minuscula y un caracter numerico.',
             icon: 'warning',
             position: 'center',
             color: 'red',
