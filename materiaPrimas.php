@@ -10,7 +10,7 @@ $result = $conn->query($query);
 
 ?>
 
-<div class="container" style="margin-top:-650px">
+<div class="container_materias_primas">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
         AGREGAR MATERIA PRIMA
@@ -36,13 +36,16 @@ $result = $conn->query($query);
                         <input type="date" id="fecha" class="form-control" name="FECHA_ENTRADA" required><br><br>
 
                         <label for="cantidad">Cantidad en Existencia:</label>
-                        <input type="number" id="cantidad" class="form-control" name="CANTIDAD_EXISTENCIA" required><br><br>
+                        <input type="number" id="cantidad" class="form-control" name="CANTIDAD_EXISTENCIA"
+                            required><br><br>
 
                         <label for="stock_maximo">Stock Máximo:</label>
-                        <input type="number" id="stock_maximo" class="form-control" name="stock_maximo" required><br><br>
+                        <input type="number" id="stock_maximo" class="form-control" name="stock_maximo"
+                            required><br><br>
 
                         <label for="stock_minimo">Stock Mínimo:</label>
-                        <input type="number" id="stock_minimo" class="form-control" name="stock_minimo" required><br><br>
+                        <input type="number" id="stock_minimo" class="form-control" name="stock_minimo"
+                            required><br><br>
 
                         <input type="submit" value="Guardar" class="btn btn-success">
                     </form>
@@ -67,32 +70,41 @@ $result = $conn->query($query);
         </tr>
         <?php
         if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) :
-        ?>
+            while ($row = $result->fetch_assoc()):
+                ?>
                 <tr>
-                    <td><?= $row["ID"]; ?></td>
-                    <td><?= $row["PRODUCTO"]; ?></td>
-                    <td><?= $row["PRECIO"]; ?></td>
-                    <td><?= $row["FECHA_ENTRADA"]; ?></td>
-                    <td><?= $row["CANTIDAD_EXISTENCIA"]; ?></td>
-                    <td><?= $row["STOCK_MAXIMO"]; ?></td>
-                    <td><?= $row["STOCK_MINIMO"]; ?></td>
+                    <td>
+                        <?= $row["ID"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["PRODUCTO"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["PRECIO"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["FECHA_ENTRADA"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["CANTIDAD_EXISTENCIA"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["STOCK_MAXIMO"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["STOCK_MINIMO"]; ?>
+                    </td>
                 </tr>
-            <?php
+                <?php
             endwhile;
         } else {
             ?>
             <tr>
                 <td colspan='6'>No hay datos en el inventario.</td>
             </tr>
-        <?php
+            <?php
         }
         ?>
 
     </table>
 </div>
-
-
-
-
-

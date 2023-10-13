@@ -238,8 +238,8 @@ a{
     }
 }
 #navbar .img{
-    height: 3rem;
-    font-size: 3rem;
+    height: 2.5rem;
+    font-size: 2rem;
     
     
 }
@@ -320,4 +320,15 @@ a{
 .corte-mensual p{
     background-color: #79ac78af;
     border-radius: 30px;
+}
+/*--- Materias Primas ---*/
+.container_materias_primas{
+    margin:  -35rem 25rem;
+    position: absolute;
+    z-index: 1;
+}
+@media (max-width: 1020px) {
+    .container_materias_primas{
+        margin: -27rem 14rem;
+    }
 }
