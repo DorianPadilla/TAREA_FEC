@@ -253,66 +253,71 @@ a{
         width: 1.5rem;
         border-radius: 50%;
     }
-}
-/*-------> Espacio de las cards con los cortes----*/
-.contenido{
-    position:absolute;
-    justify-content: space-evenly;
-    margin: 8rem 0 0 15rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr)) ;
+}/*------->  CORTES ----*/
 
-    
-}
-
-.contenido .cortes{
+.corte{
+    position: absolute;
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    align-items: center; 
-    
-}
-.contenido .cortes .corte{
-    display: flex;
-    flex-direction:column;
-    align-items:center ;
-    text-align: center;
-    padding: 25px;
-    background-color: #00913f;
-    border: 1px solid;
-    border-radius: 10px;
-    text-align: center;
-
-}
-.contenido .cortes .corte h1{
-    display: flex;
-    text-align: center;
-    color: rgb(243, 238, 238);
-    border-radius: 10px;
-    width: 290px;
-    height: 40px;
-    
-    
-
-}
-.corte p{
-    width: 100%;
-    background-color: rgba(212, 236, 214, 0.473) ;
-    border-radius: 10px;
-}
-
-.contenido .corte p{
-    display: flex;
-    font-family: "verdana" "center";
-    text-align: center;
-    align-items:center ;
+    gap: 22px;
     justify-content: center;
-    margin-top: 1.5rem;
-    height: 50px;
-    width: 100%;
-    border-radius: 10px;
-    background-color: #ffffff;
-   
-
-
+    margin: 6rem  19rem;
+    padding: 20px;
+}
+@media (max-width: 1020px) {
+    .corte{
+        position: absolute;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        z-index: 2;
+        margin: 4rem 0rem 0rem 13rem;
+    }
+}
+/* ---- Estilos de las cards (cortes)----*/
+/* Corte Diario*/
+.corte-diario{
+    background-color: #B0D9B1;
+    color: var(--color-text);
+    border-radius: 40px;
+    padding: 15px;
+    text-align: center;
+}
+.corte-diario h1{
+   Color: #064420;
+}
+.corte-diario p{
+    background-color: #79ac78af;
+    border-radius: 30px;
+}
+/*Corte Semanal*/
+.corte-semanal{
+    background-color: #B0D9B1;
+    color: var(--color-text);
+    border-radius: 40px;
+    padding: 15px;
+    text-align: center;
+}
+.corte-semanal h1{
+   Color: #064420;
+}
+.corte-semanal p{
+    background-color: #79ac78af;
+    border-radius: 30px;
+}
+/* Corte Mensual*/
+.corte-mensual{
+    background-color: #B0D9B1;
+    color: var(--color-text);
+    border-radius: 40px;
+    padding: 15px;
+    text-align: center;
+}
+.corte-mensual h1{
+   Color: #064420;
+}
+.corte-mensual p{
+    background-color: #79ac78af;
+    border-radius: 30px;
 }
