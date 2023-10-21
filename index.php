@@ -40,10 +40,8 @@
         </div>
         <div class="buttons">
             <div class="button">
-                <button class="boton">
-                    <h3>Registrese</h3>
-                </button>
-                <button class="boton" onclick="location.href='login.php'"> 
+
+                <button class="boton" onclick="location.href='login.php'">
                     <h3>Administración</h3>
                 </button>
             </div>
